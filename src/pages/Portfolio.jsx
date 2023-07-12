@@ -11,14 +11,31 @@ import Image4 from '../img/portfolio/4.png'
 // Import Link
 import { Link } from 'react-router-dom'
 
+// Import Motion
+import { motion } from 'framer-motion'
+
+// Import Transitions
+import { transition1 } from '../transitions'
 
 const Portfolio = () => {
   return (
-    <section className='section'>
+    <motion.section
+      initial={{ opacity: 0, y: '100%' }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: '100%' }}
+      transition={transition1}
+      className='section'
+    >
       <div className="container mx-auto h-full relative">
         <div className='flex flex-col lg:flex-row h-full items-center justify-start gap-x-24 text-center lg:text-left pt-24 lg:pt-36 pb-8'>
           {/* Text */}
-          <div className='flex flex-col lg:items-center'>
+          <motion.div
+            initial={{ opacity: 0, y: '-80%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '-80%' }}
+            transition={transition1}
+            className='flex flex-col lg:items-center'
+          >
             <h1 className='h1'>
               Portfolio
             </h1>
@@ -31,7 +48,7 @@ const Portfolio = () => {
             <Link to={'/contact'} className='btn mb-[30px] mx-auto lg:mx-0'>
               Hire Me
             </Link>
-          </div>
+          </motion.div>
           {/* Images Grid */}
           <div className='grid grid-cols-2 lg:gap-2'>
             {/* Image */}
@@ -69,7 +86,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

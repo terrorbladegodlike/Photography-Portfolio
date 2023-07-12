@@ -7,7 +7,7 @@ import AnimRoutes from './components/AnimRoutes';
 // Import Router
 import { BrowserRouter as Router } from 'react-router-dom';
 
-// Import Router
+// Import Motion Router
 import { motion } from 'framer-motion'
 
 const App = () => {
